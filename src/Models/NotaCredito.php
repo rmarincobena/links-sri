@@ -5,7 +5,7 @@ namespace SRI\Models;
 class NotaCredito extends ComprobanteGeneral
 {
     public string $codDocModificado;
-    public $detalles; // detalleNotaCredito
+    public DetallesNotaCredito $detalles;
     public string $fechaEmisionDocSustento;
     public string $identificacionComprador;
     public DetallesAdicionales $infoAdicional;

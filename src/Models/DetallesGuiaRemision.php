@@ -2,7 +2,7 @@
 
 namespace SRI\Models;
 
-class DetalleGuiaRemision
+class DetallesGuiaRemision
 {
     public string $cantidad;
     public string $codigoAdicional;

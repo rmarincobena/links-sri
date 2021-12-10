@@ -2,7 +2,7 @@
 
 namespace SRI\Models;
 
-class DetalleNotaCredito
+class DetallesNotaCredito
 {
     public string $codigoInterno;
     public string $codigoAdicional;

@@ -10,8 +10,4 @@ class ConfiguracionCorreo
     public string $correoPort;
     public string $correoRemitente;
     public bool $sslHabilitado;
-
-    public function __construct()
-    {
-    }
 }
