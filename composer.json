@@ -2,6 +2,7 @@
     "name": "links/sri",
     "type": "library",
     "description": "Library for the management of the SRI.",
+    "version": "1.0.0",
     "keywords": [
         "SRI",
         "LINKS",
