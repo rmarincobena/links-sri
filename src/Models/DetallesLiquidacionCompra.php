@@ -1,0 +1,16 @@
+<?php
+
+namespace SRI\Models;
+
+class DetallesLiquidacionCompra
+{
+    public string $codigoPrincipal;
+    public string $codigoAuxiliar;
+    public string $descripcion;
+    public string $cantidad;
+    public string $precioUnitario;
+    public string $descuento;
+    public string $precioTotalSinImpuesto;
+    public DetallesAdicionales $detalleAdicional;
+    public Impuestos $impuestos;
+}
