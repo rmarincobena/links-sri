@@ -2,7 +2,7 @@
 
 namespace SRI\Models;
 
-class ProcesarProforma
+class ProcesarProformaRespuesta
 {
     public /* Respuesta */ $return;
 }
