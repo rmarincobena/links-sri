@@ -95,7 +95,6 @@ class ComprobanteElectronico extends SoapClient
         'obtenerComprobanteResponse' => ObtenerComprobanteRespuesta::class,
     );
 
-    /* $wsdl = "http://localhost:8081/MasterOffline/ComprobanteElectronico?wsdl", $options = array() */
     public function __construct($wsdl, $options = array())
     {
         foreach (self::$classmap as $key => $value) {
@@ -106,6 +105,21 @@ class ComprobanteElectronico extends SoapClient
         parent::__construct($wsdl, $options);
     }
 
+    public function ProcesarComprobanteElectronico($wsdl, $options = array())
+    {
+        foreach (self::$classmap as $key => $value) {
+            if (!isset($options['classmap'][$key])) {
+                $options['classmap'][$key] = $value;
+            }
+        }
+        parent::__construct($wsdl, $options);
+    }
+
+    /**
+     *
+     * @param procesarComprobante $parameters
+     * @return ProcesarComprobanteRespuesta
+     */
     public function procesarComprobante(ProcesarComprobante $parameters)
     {
         return $this->__soapCall(
@@ -118,6 +132,11 @@ class ComprobanteElectronico extends SoapClient
         );
     }
 
+    /**
+     *
+     * @param procesarComprobantePendiente $parameters
+     * @return ProcesarComprobantePendienteRespuesta
+     */
     public function procesarComprobantePendiente(ProcesarComprobantePendiente $parameters)
     {
         return $this->__soapCall(
@@ -130,6 +149,11 @@ class ComprobanteElectronico extends SoapClient
         );
     }
 
+    /**
+     *
+     * @param ProcesarXML $parameters
+     * @return ProcesarXMLRespuesta
+     */
     public function procesarXML(ProcesarXML $parameters)
     {
         return $this->__soapCall(
@@ -142,6 +166,11 @@ class ComprobanteElectronico extends SoapClient
         );
     }
 
+    /**
+     *
+     * @param GenerarXMLPDF $parameters
+     * @return GenerarXMLPDFRespuesta
+     */
     public function generarXMLPDF(GenerarXMLPDF $parameters)
     {
         return $this->__soapCall(
@@ -154,6 +183,11 @@ class ComprobanteElectronico extends SoapClient
         );
     }
 
+    /**
+     *
+     * @param ProcesarProforma $parameters
+     * @return ProcesarXMLRespuesta
+     */
     public function procesarProforma(ProcesarProforma $parameters)
     {
         return $this->__soapCall(
@@ -166,6 +200,11 @@ class ComprobanteElectronico extends SoapClient
         );
     }
 
+    /**
+     *
+     * @param ReenvioMail $parameters
+     * @return ProcesarComprobanteRespuesta
+     */
     public function reenviarEmail(ReenvioMail $parameters)
     {
         return $this->__soapCall(
@@ -178,17 +217,11 @@ class ComprobanteElectronico extends SoapClient
         );
     }
 
-    /* $wsdl = "http://localhost:8001/MasterOffline/ProcesarComprobanteElectronico?wsdl", $options = array() */
-    public function ProcesarComprobanteElectronico($wsdl, $options = array())
-    {
-        foreach (self::$classmap as $key => $value) {
-            if (!isset($options['classmap'][$key])) {
-                $options['classmap'][$key] = $value;
-            }
-        }
-        parent::__construct($wsdl, $options);
-    }
-
+    /**
+     *
+     * @param ProcesarComprobanteLote $parameters
+     * @return ProcesarComprobanteLoteRespuesta
+     */
     public function procesarComprobanteLote(ProcesarComprobanteLote $parameters)
     {
         return $this->__soapCall(
