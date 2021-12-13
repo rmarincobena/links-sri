@@ -15,5 +15,5 @@ class Destinatario
     public string $numDocSustento;
     public string $numAutDocSustento;
     public string $fechaEmisionDocSustento;
-    public DetallesGuiaRemision $detalles;
+    public /* DetallesGuiaRemision */ $detalles;
 }

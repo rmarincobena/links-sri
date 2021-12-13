@@ -4,5 +4,5 @@ namespace SRI\Models;
 
 class ReenvioMailRespuesta
 {
-    public Respuesta $return;
+    public /* Respuesta */ $return;
 }

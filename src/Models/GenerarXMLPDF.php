@@ -4,6 +4,6 @@ namespace SRI\Models;
 
 class GenerarXMLPDF
 {
-    public ComprobanteGeneral $comprobante;
+    public /* ComprobanteGeneral */ $comprobante;
     public $envioEmail;
 }

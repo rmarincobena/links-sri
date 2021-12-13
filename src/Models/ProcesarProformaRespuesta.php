@@ -4,5 +4,5 @@ namespace SRI\Models;
 
 class ProcesarProforma
 {
-    public Respuesta $return;
+    public /* Respuesta */ $return;
 }

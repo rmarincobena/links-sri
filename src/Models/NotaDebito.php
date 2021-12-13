@@ -11,9 +11,9 @@ class NotaDebito extends ComprobanteGeneral
     public string $numDocModificado;
     public string $fechaEmisionDocSustento;
     public string $totalSinImpuestos;
-    public Impuestos $impuestos;
-    public Motivos $motivos;
-    public DetallesAdicionales $infoAdicional;
+    public /* Impuestos */ $impuestos;
+    public /* Motivos */ $motivos;
+    public /* DetallesAdicionales */ $infoAdicional;
     public string $rise;
     public string $valorTotal;
 }

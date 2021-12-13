@@ -8,6 +8,6 @@ class Retencion extends ComprobanteGeneral
     public string $razonSocialSujetoRetenido;
     public string $identificacionSujetoRetenido;
     public string $periodoFiscal;
-    public ImpuestoRetencion $impuestos;
-    public DetallesAdicionales $infoAdicional;
+    public /* ImpuestoRetencion */ $impuestos;
+    public /* DetallesAdicionales */ $infoAdicional;
 }

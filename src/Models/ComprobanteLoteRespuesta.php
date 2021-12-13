@@ -6,6 +6,6 @@ class ComprobanteLoteRespuesta
 {
     public string $claveAccesoConsultada;
     public bool $error;
-    public MensajeGenerado $mensajeGeneral;
-    public Respuesta $respuestas;
+    public /* MensajeGenerado */ $mensajeGeneral;
+    public /* Respuesta */ $respuestas;
 }

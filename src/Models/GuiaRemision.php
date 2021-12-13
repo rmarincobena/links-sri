@@ -12,6 +12,6 @@ class GuiaRemision extends ComprobanteGeneral
     public string $fechaFinTransporte;
     public string $fechaIniTransporte;
     public string $placa;
-    public DetallesAdicionales $infoAdicional;
-    public Destinatario $destinatarios;
+    public /* DetallesAdicionales */ $infoAdicional;
+    public /* Destinatario */ $destinatarios;
 }

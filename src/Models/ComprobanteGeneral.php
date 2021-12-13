@@ -26,6 +26,6 @@ class ComprobanteGeneral
     public string $tipoDoc;
 
     /* Informacion Seguridad */
-    public Configuracion $configAplicacion;
-    public ConfiguracionCorreo $configCorreo;
+    public /* Configuracion */ $configAplicacion;
+    public /* ConfiguracionCorreo */ $configCorreo;
 }

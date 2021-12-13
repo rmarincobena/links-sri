@@ -12,16 +12,16 @@ class Factura extends ComprobanteGeneral
     public string $totalSinImpuestos;
     public string $totalDescuento;
 
-    public Impuestos $totalConImpuesto;
+    public /* Impuestos */ $totalConImpuesto;
 
     public string $propina;
     public string $importeTotal;
     public string $moneda;
 
-    public Pagos $pagos;
+    public /* Pagos */ $pagos;
 
-    public DetallesFactura $detalles;
-    public DetallesAdicionales $infoAdicional;
+    public /* DetallesFactura */ $detalles;
+    public /* DetallesAdicionales */ $infoAdicional;
 
     public string $regimenMicroempresas;
     public string $agenteRetencion;

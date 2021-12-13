@@ -4,5 +4,5 @@ namespace SRI\Models;
 
 class ReenvioMail
 {
-    public ComprobantePendiente $reenvioEmailParam;
+    public /* ComprobantePendiente */ $reenvioEmailParam;
 }

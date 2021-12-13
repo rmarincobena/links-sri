@@ -4,5 +4,5 @@ namespace SRI\Models;
 
 class ProcesarXMLRespuesta
 {
-    public Respuesta $return;
+    public /* Respuesta */ $return;
 }

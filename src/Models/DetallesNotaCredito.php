@@ -11,6 +11,6 @@ class DetallesNotaCredito
     public string $precioUnitario;
     public string $descuento;
     public string $precioTotalSinImpuesto;
-    public DetallesAdicionales $detallesAdicionales;
-    public Impuestos $impuestos;
+    public /* DetallesAdicionales */ $detallesAdicionales;
+    public /* Impuestos */ $impuestos;
 }

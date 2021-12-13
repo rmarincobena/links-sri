@@ -4,5 +4,5 @@ namespace SRI\Models;
 
 class ProcesarComprobanteLote
 {
-    public ComprobanteLote $comprobanteLote;
+    public /* ComprobanteLote */ $comprobanteLote;
 }

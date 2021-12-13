@@ -4,6 +4,6 @@ namespace SRI\Models;
 
 class ProcesarComprobante
 {
-    public ComprobanteGeneral $comprobante;
+    public /* ComprobanteGeneral */ $comprobante;
     public $envioSRI;
 }

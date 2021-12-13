@@ -4,5 +4,5 @@ namespace SRI\Models;
 
 class ProcesarComprobantePendiente
 {
-    public ComprobantePendiente $comprobantePendiente;
+    public /* ComprobantePendiente */ $comprobantePendiente;
 }

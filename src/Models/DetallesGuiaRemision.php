@@ -8,5 +8,5 @@ class DetallesGuiaRemision
     public string $codigoAdicional;
     public string $codigoInterno;
     public string $descripcion;
-    public DetallesAdicionales $detallesAdicionales;
+    public /* DetallesAdicionales */ $detallesAdicionales;
 }

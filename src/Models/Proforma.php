@@ -4,7 +4,7 @@ namespace SRI\Models;
 
 class Proforma
 {
-    public ConfiguracionCorreo $configCorreo;
+    public /* ConfiguracionCorreo */ $configCorreo;
     public string $dirLogo;
     public string $dirProformas;
     public string $tipoEmision;
@@ -24,6 +24,6 @@ class Proforma
     public string $iva;
     public string $totalDescuento;
     public string $importeTotal;
-    public DetallesProforma $detalles;
-    public DetallesAdicionales $infoAdicional;
+    public /* DetallesProforma */ $detalles;
+    public /* DetallesAdicionales */ $infoAdicional;
 }

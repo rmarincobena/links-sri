@@ -6,8 +6,8 @@ class ComprobantePendiente
 {
     public string $ambiente;
     public string $codDoc;
-    public Configuracion $configAplicacion;
-    public ConfiguracionCorreo $configCorreo;
+    public /* Configuracion */ $configAplicacion;
+    public /* ConfiguracionCorreo */ $configCorreo;
     public string $establecimiento;
     public string $fechaEmision;
     public string $ptoEmision;

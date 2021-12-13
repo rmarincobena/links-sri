@@ -10,10 +10,10 @@ class LiquidacionCompra extends ComprobanteGeneral
     public string $direccionProveedor;
     public string $totalSinImpuestos;
     public string $totalDescuento;
-    public DetallesLiquidacionCompra $detalles;
-    public Impuestos $totalConImpuesto;
+    public /* DetallesLiquidacionCompra */ $detalles;
+    public /* Impuestos */ $totalConImpuesto;
     public string $importeTotal;
     public string $moneda;
-    public Pagos $pagos;
-    public DetallesAdicionales $infoAdicional;
+    public /* Pagos */ $pagos;
+    public /* DetallesAdicionales */ $infoAdicional;
 }

@@ -4,5 +4,5 @@ namespace SRI\Models;
 
 class ProcesarProforma
 {
-    public Proforma $proforma;
+    public /* Proforma */ $proforma;
 }

@@ -4,5 +4,5 @@ namespace SRI\Models;
 
 class GenerarXMLPDFRespuesta
 {
-    public Respuesta $return;
+    public /* Respuesta */ $return;
 }
