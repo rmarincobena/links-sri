@@ -2,7 +2,7 @@
 
 namespace SRI\Models;
 
-class ObtenerComprobante
+class ObtenerComprobanteRespuesta
 {
     public /* Respuesta */ $return;
 }
