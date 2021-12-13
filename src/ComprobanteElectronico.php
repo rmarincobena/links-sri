@@ -3,53 +3,23 @@
 namespace SRI;
 
 use SoapClient;
-use SRI\Models\Pagos;
-use SRI\Models\Motivos;
-use SRI\Models\Factura;
-use SRI\Models\Proforma;
-use SRI\Models\Impuestos;
-use SRI\Models\Retencion;
-use SRI\Models\Respuesta;
-use SRI\Models\NotaDebito;
-use SRI\Models\NotaCredito;
+
 use SRI\Models\ReenvioMail;
 use SRI\Models\ProcesarXML;
-use SRI\Models\GuiaRemision;
-use SRI\Models\Destinatario;
 use SRI\Models\GenerarXMLPDF;
-use SRI\Models\Configuracion;
-use SRI\Models\MensajeGenerado;
-use SRI\Models\ComprobanteLote;
-use SRI\Models\DetallesFactura;
 use SRI\Models\ProcesarProforma;
-use SRI\Models\ReenvioMailParam;
-use SRI\Models\DetallesProforma;
-use SRI\Models\LiquidacionCompra;
-use SRI\Models\ImpuestoRetencion;
-use SRI\Models\ComprobanteGeneral;
-use SRI\Models\ObtenerComprobante;
-use SRI\Models\DetallesNotaCredito;
-use SRI\Models\ConfiguracionCorreo;
 use SRI\Models\ProcesarComprobante;
-use SRI\Models\DetallesAdicionales;
-use SRI\Models\ComprobantePendiente;
-use SRI\Models\DetallesGuiaRemision;
 use SRI\Models\ProcesarXMLRespuesta;
-use SRI\Models\ReenvioMailRespuesta;
 use SRI\Models\GenerarXMLPDFRespuesta;
 use SRI\Models\ProcesarComprobanteLote;
-use SRI\Models\ComprobanteLoteRespuesta;
-use SRI\Models\DetallesLiquidacionCompra;
-use SRI\Models\ObtenerComprobanteRespuesta;
 use SRI\Models\ProcesarComprobantePendiente;
 use SRI\Models\ProcesarComprobanteRespuesta;
-use SRI\Models\ComprobanteConsultadoRespuesta;
 use SRI\Models\ProcesarComprobanteLoteRespuesta;
 use SRI\Models\ProcesarComprobantePendienteRespuesta;
 
 class ComprobanteElectronico extends SoapClient
 {
-    private static $classmap = array(
+    /* private static $classmap = array(
         'factura' => Factura::class,
         'proforma' => Proforma::class,
         'liquidacionCompra' => LiquidacionCompra::class,
@@ -93,6 +63,52 @@ class ComprobanteElectronico extends SoapClient
         'respuestaComprobanteConsultado' => ComprobanteConsultadoRespuesta::class,
         'obtenerComprobante' => ObtenerComprobante::class,
         'obtenerComprobanteResponse' => ObtenerComprobanteRespuesta::class,
+    ); */
+
+    private static $classmap = array(
+        'factura' => 'factura',
+        'proforma' => 'proforma',
+        'liquidacionCompra' => 'liquidacionCompra',
+        'comprobanteGeneral' => 'comprobanteGeneral',
+        'detalleFactura' => 'detalleFactura',
+        'detalleProforma' => 'detalleProforma',
+        'detalleLiquidacionCompra' => 'detalleLiquidacionCompra',
+        'detalleAdicional' => 'detalleAdicional',
+        'impuesto' => 'impuesto',
+        'campoAdicional' => 'campoAdicional',
+        'totalImpuesto' => 'totalImpuesto',
+        'configAplicacion' => 'configAplicacion',
+        'configCorreo' => 'configCorreo',
+        'guiaRemision' => 'guiaRemision',
+        'destinatario' => 'destinatario',
+        'detalleGuiaRemision' => 'detalleGuiaRemision',
+        'comprobanteRetencion' => 'comprobanteRetencion',
+        'impuestoComprobanteRetencion' => 'impuestoComprobanteRetencion',
+        'notaDebito' => 'notaDebito',
+        'motivo' => 'motivo',
+        'pagos' => 'pagos',
+        'notaCredito' => 'notaCredito',
+        'detalleNotaCredito' => 'detalleNotaCredito',
+        'comprobantePendiente' => 'comprobantePendiente',
+        'mensajeGenerado' => 'mensajeGenerado',
+        'respuesta' => 'respuesta',
+        'procesarComprobantePendiente' => 'procesarComprobantePendiente',
+        'procesarComprobantePendienteResponse' => 'procesarComprobantePendienteResponse',
+        'procesarComprobante' => 'procesarComprobante',
+        'procesarComprobanteResponse' => 'procesarComprobanteResponse',
+        'generarXMLPDF' => 'generarXMLPDF',
+        'generarXMLPDFResponse' => 'generarXMLPDFResponse',
+        'procesarXML' => 'procesarXML',
+        'procesarXMLResponse' => 'procesarXMLResponse',
+        'reenvioEmailParam' => 'reenvioEmailParam',
+        'reenviarEmail' => 'reenviarEmail',
+        'reenviarEmailResponse' => 'reenviarEmailResponse',
+        'procesarComprobanteLote' => 'procesarComprobanteLote',
+        'comprobanteLote' => 'comprobanteLote',
+        'respuestaComprobanteLote' => 'respuestaComprobanteLote',
+        'respuestaComprobanteConsultado' => 'respuestaComprobanteConsultado',
+        'obtenerComprobante' => 'obtenerComprobante',
+        'obtenerComprobanteResponse' => 'obtenerComprobanteResponse',
     );
 
     /* $wsdl = "http://localhost:8081/MasterOffline/ComprobanteElectronico?wsdl", $options = array() */
