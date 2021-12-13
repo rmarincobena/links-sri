@@ -3,65 +3,96 @@
 namespace SRI;
 
 use SoapClient;
+use SRI\Models\Pagos;
+use SRI\Models\Motivos;
+use SRI\Models\Factura;
+use SRI\Models\Proforma;
+use SRI\Models\Impuestos;
+use SRI\Models\Retencion;
+use SRI\Models\Respuesta;
+use SRI\Models\NotaDebito;
+use SRI\Models\NotaCredito;
 use SRI\Models\ReenvioMail;
 use SRI\Models\ProcesarXML;
+use SRI\Models\GuiaRemision;
+use SRI\Models\Destinatario;
 use SRI\Models\GenerarXMLPDF;
+use SRI\Models\Configuracion;
+use SRI\Models\MensajeGenerado;
+use SRI\Models\ComprobanteLote;
+use SRI\Models\DetallesFactura;
 use SRI\Models\ProcesarProforma;
+use SRI\Models\ReenvioMailParam;
+use SRI\Models\DetallesProforma;
+use SRI\Models\LiquidacionCompra;
+use SRI\Models\ImpuestoRetencion;
+use SRI\Models\ComprobanteGeneral;
+use SRI\Models\ObtenerComprobante;
+use SRI\Models\DetallesNotaCredito;
+use SRI\Models\ConfiguracionCorreo;
 use SRI\Models\ProcesarComprobante;
+use SRI\Models\DetallesAdicionales;
+use SRI\Models\ComprobantePendiente;
+use SRI\Models\DetallesGuiaRemision;
 use SRI\Models\ProcesarXMLRespuesta;
+use SRI\Models\ReenvioMailRespuesta;
 use SRI\Models\GenerarXMLPDFRespuesta;
 use SRI\Models\ProcesarComprobanteLote;
+use SRI\Models\ComprobanteLoteRespuesta;
+use SRI\Models\DetallesLiquidacionCompra;
+use SRI\Models\ObtenerComprobanteRespuesta;
 use SRI\Models\ProcesarComprobantePendiente;
 use SRI\Models\ProcesarComprobanteRespuesta;
+use SRI\Models\ComprobanteConsultadoRespuesta;
 use SRI\Models\ProcesarComprobanteLoteRespuesta;
 use SRI\Models\ProcesarComprobantePendienteRespuesta;
 
 class ComprobanteElectronico extends SoapClient
 {
     private static $classmap = array(
-        'factura' => '\SRI\Models\Factura',
-        'proforma' => '\SRI\Models\Proforma',
-        'liquidacionCompra' => '\SRI\Models\LiquidacionCompra',
-        'comprobanteGeneral' => '\SRI\Models\ComprobanteGeneral',
-        'detalleFactura' => '\SRI\Models\DetallesFactura',
-        'detalleProforma' => '\SRI\Models\DetallesProforma',
-        'detalleLiquidacionCompra' => '\SRI\Models\DetallesLiquidacionCompra',
-        'detalleAdicional' => '\SRI\Models\DetallesAdicionales',
-        'impuesto' => '\SRI\Models\Impuestos',
-        'campoAdicional' => '\SRI\Models\DetallesAdicionales',
-        'totalImpuesto' => '\SRI\Models\Impuestos',
-        'configAplicacion' => '\SRI\Models\Configuracion',
-        'configCorreo' => '\SRI\Models\ConfiguracionCorreo',
-        'guiaRemision' => '\SRI\Models\GuiaRemision',
-        'destinatario' => '\SRI\Models\Destinatario',
-        'detalleGuiaRemision' => 'detalleGuiaRemision',
-        'comprobanteRetencion' => '\SRI\Models\Retencion',
-        'impuestoComprobanteRetencion' => '\SRI\Models\ImpuestoRetencion',
-        'notaDebito' => '\SRI\Models\NotaDebito',
-        'motivo' => '\SRI\Models\Motivos',
-        'pagos' => '\SRI\Models\Pagos',
-        'notaCredito' => '\SRI\Models\NotaCredito',
-        'detalleNotaCredito' => '\SRI\Models\DetallesNotaCredito',
-        'comprobantePendiente' => '\SRI\Models\ComprobantePendiente',
-        'mensajeGenerado' => '\SRI\Models\MensajeGenerado',
-        'respuesta' => '\SRI\Models\Respuesta',
-        'procesarComprobantePendiente' => '\SRI\Models\ProcesarComprobantePendiente',
-        'procesarComprobantePendienteResponse' => '\SRI\Models\ProcesarComprobantePendienteRespuesta',
-        'procesarComprobante' => '\SRI\Models\ProcesarComprobante',
-        'procesarComprobanteResponse' => '\SRI\Models\ProcesarComprobanteRespuesta',
-        'generarXMLPDF' => '\SRI\Models\GenerarXMLPDF',
-        'generarXMLPDFResponse' => '\SRI\Models\GenerarXMLPDFRespuesta',
-        'procesarXML' => '\SRI\Models\ProcesarXML',
-        'procesarXMLResponse' => '\SRI\Models\ProcesarXMLRespuesta',
-        'reenvioEmailParam' => '\SRI\Models\ReenvioMailParam',
-        'reenviarEmail' => '\SRI\Models\ReenvioMail',
-        'reenviarEmailResponse' => '\SRI\Models\ReenvioMailRespuesta',
-        'procesarComprobanteLote' => '\SRI\Models\ProcesarComprobanteLote',
-        'comprobanteLote' => '\SRI\Models\ComprobanteLote',
-        'respuestaComprobanteLote' => '\SRI\Models\ComprobanteLoteRespuesta',
-        'respuestaComprobanteConsultado' => '\SRI\Models\ComprobanteConsultadoRespuesta',
-        'obtenerComprobante' => '\SRI\Models\ObtenerComprobante',
-        'obtenerComprobanteResponse' => '\SRI\Models\ObtenerComprobanteRespuesta',
+        'factura' => Factura::class,
+        'proforma' => Proforma::class,
+        'liquidacionCompra' => LiquidacionCompra::class,
+        'comprobanteGeneral' => ComprobanteGeneral::class,
+        'detalleFactura' => DetallesFactura::class,
+        'detalleProforma' => DetallesProforma::class,
+        'detalleLiquidacionCompra' => DetallesLiquidacionCompra::class,
+        'detalleAdicional' => DetallesAdicionales::class,
+        'impuesto' => Impuestos::class,
+        'campoAdicional' => DetallesAdicionales::class,
+        'totalImpuesto' => Impuestos::class,
+        'configAplicacion' => Configuracion::class,
+        'configCorreo' => ConfiguracionCorreo::class,
+        'guiaRemision' => GuiaRemision::class,
+        'destinatario' => Destinatario::class,
+        'detalleGuiaRemision' => DetallesGuiaRemision::class,
+        'comprobanteRetencion' => Retencion::class,
+        'impuestoComprobanteRetencion' => ImpuestoRetencion::class,
+        'notaDebito' => NotaDebito::class,
+        'motivo' => Motivos::class,
+        'pagos' => Pagos::class,
+        'notaCredito' => NotaCredito::class,
+        'detalleNotaCredito' => DetallesNotaCredito::class,
+        'comprobantePendiente' => ComprobantePendiente::class,
+        'mensajeGenerado' => MensajeGenerado::class,
+        'respuesta' => Respuesta::class,
+        'procesarComprobantePendiente' => ProcesarComprobantePendiente::class,
+        'procesarComprobantePendienteResponse' => ProcesarComprobantePendienteRespuesta::class,
+        'procesarComprobante' => ProcesarComprobante::class,
+        'procesarComprobanteResponse' => ProcesarComprobanteRespuesta::class,
+        'generarXMLPDF' => GenerarXMLPDF::class,
+        'generarXMLPDFResponse' => GenerarXMLPDFRespuesta::class,
+        'procesarXML' => ProcesarXML::class,
+        'procesarXMLResponse' => ProcesarXMLRespuesta::class,
+        'reenvioEmailParam' => ReenvioMailParam::class,
+        'reenviarEmail' => ReenvioMail::class,
+        'reenviarEmailResponse' => ReenvioMailRespuesta::class,
+        'procesarComprobanteLote' => ProcesarComprobanteLote::class,
+        'comprobanteLote' => ComprobanteLote::class,
+        'respuestaComprobanteLote' => ComprobanteLoteRespuesta::class,
+        'respuestaComprobanteConsultado' => ComprobanteConsultadoRespuesta::class,
+        'obtenerComprobante' => ObtenerComprobante::class,
+        'obtenerComprobanteResponse' => ObtenerComprobanteRespuesta::class,
     );
 
     /* $wsdl = "http://localhost:8081/MasterOffline/ComprobanteElectronico?wsdl", $options = array() */
