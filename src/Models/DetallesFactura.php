@@ -12,5 +12,5 @@ class DetallesFactura
     public string $descuento;
     public string $precioTotalSinImpuesto;
     public /* DetallesAdicionales */ $detalleAdicional;
-    public Impuestos $impuestos;
+    public /* Impuestos */ $impuestos;
 }
