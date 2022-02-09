@@ -4,13 +4,13 @@ namespace SRI\Models;
 
 class DetallesFactura
 {
-    public string $codigoPrincipal;
-    public string $codigoAuxiliar;
-    public string $descripcion;
-    public string $cantidad;
-    public string $precioUnitario;
-    public string $descuento;
-    public string $precioTotalSinImpuesto;
+    public $codigoPrincipal;
+    public $codigoAuxiliar;
+    public $descripcion;
+    public $cantidad;
+    public $precioUnitario;
+    public $descuento;
+    public $precioTotalSinImpuesto;
     public /* DetallesAdicionales */ $detalleAdicional;
     public /* Impuestos */ $impuestos;
 }
